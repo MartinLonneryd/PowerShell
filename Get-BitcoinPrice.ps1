@@ -68,5 +68,8 @@ $A = Get-BitcoinPrice
 
 
 if ([int]$a.rate -le $Pris){
-  Send-MailMessage -Body "Priset pa bitcoins ar nu $($a.rate) vilket ar lagre an $Pris dollar, dags att handla"  -Subject 'Dags att kopa Bitcoin' -SmtpServer smtp.office365.com -UseSsl -Port 587 -From martin@lonneryd.se -To "martin.lonneryd@avanade.com","martin@lonneryd.se" -Credential $Credentials
+  Send-MailMessage -Body "Priset pa bitcoins ar nu $($a.rate) vilket ar lagre an $Pris dollar, dags att handla"  -Subject 'Dags att kopa Bitcoin' -SmtpServer smtp.office365.com -UseSsl -Port 587 -From martin@lonneryd.se -To "martin@lonneryd.se" -Credential $Credentials
+}
+else{
+'Inte dags att handla annu'    
 }
